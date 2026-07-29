@@ -8,6 +8,6 @@ fn vue_account(titre: Text, connecte: Bool) -> Text {
     } else {
     _o += "\n<section class=\"page-head\"><p class=\"cap\">Compte <b>· Accès sécurisé</b></p><h1>Votre espace,<br><em>bien protégé.</em></h1><p>Noliae ne lit jamais une session dans l’interface. NolCore la valide avant tout accès à vos données.</p></section><section class=\"access-card\"><span class=\"lock\">⌁</span><div><h2>Connectez-vous pour continuer</h2><p>Votre cookie de session sécurisé vous donnera accès à vos paramètres, services et préférences.</p></div><a href=\"https://login.noliae.com\">Se connecter <span>→</span></a><small><i></i> Session vérifiée côté serveur</small></section>\n"
     }
-    _o += "\n</main></div></body></html>\n"
+    _o += "\n</main></div><script>(async()=>{const h=location.hostname;const a=h.startsWith(\"account.\")?location.protocol+\"//api.\"+h.slice(8):location.origin;try{const r=await fetch(a+\"/v1/branding\");if(!r.ok)return;const b=await r.json(),n=b.name||\"NolCore\";document.title=\"Compte — \"+n;document.querySelectorAll(\"a\").forEach(x=>{if(x.href.includes(\"login.\"))x.href=b.login_url||x.href;else if(x.href.includes(\"ia.\"))x.href=b.ia_url||x.href;else if(x.href.includes(\"noliae.com\"))x.href=b.search_url||b.website_url||x.href});document.querySelectorAll(\".brand span\").forEach(x=>x.textContent=n)}catch(_){}})();</script></body></html>\n"
     return _o
 }
