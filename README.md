@@ -22,6 +22,10 @@ L’UI ne fait jamais confiance à la simple présence d’un cookie pour autori
 une action sensible. Pour utiliser IA, le même mécanisme Core protège
 `/v1/ia/*` : sans session valide, la réponse reste `401 Unauthorized`.
 
+La page peut lister les appareils avec `GET /v1/user/me/sessions`, révoquer un
+appareil précis ou toutes les sessions. Les empreintes de tokens ne sont jamais
+retournées au navigateur.
+
 ## Développement et livraison
 
 ```sh
