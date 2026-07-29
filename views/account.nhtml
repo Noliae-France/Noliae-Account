@@ -1,0 +1,11 @@
+@model(titre: Text, connecte: Bool)
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>@titre</title><meta name="robots" content="noindex,nofollow"><link rel="stylesheet" href="/static/noliae.css"></head>
+<body>
+<header><a href="/" class="brand">▂▅█▇█▅▂ <span>noliae</span><b>account</b></a><nav><a href="https://noliae.com">Search</a><a href="https://ia.noliae.com">IA</a></nav></header>
+@if(connecte)
+<main><aside><div class="avatar">NL</div><strong>Mon compte</strong><small>Session Noliae active</small><a class="active" href="#profil">Informations</a><a href="#security">Sécurité</a><a href="#apps">Apps connectées</a><a href="#privacy">Confidentialité</a></aside><section><p class="cap"><i></i> Compte Noliae</p><h1>Votre espace,<br><em>à votre image.</em></h1><div class="stats"><article><small>SESSION</small><b>Active</b><span>Cookie sécurisé</span></article><article><small>PROTECTION</small><b>IP liée</b><span>Vérification Core</span></article><article><small>ACCÈS</small><b>3 apps</b><span>Search, IA, Account</span></article></div><div class="panel" id="profil"><header><h2>Informations personnelles</h2><span>Modifiables via NolCore</span></header><form action="/v1/user/me/changename" method="post"><label>Nom affiché<input name="name" placeholder="Votre nom"></label><label>Adresse e-mail<input name="email" type="email" placeholder="vous@@noliae.com"></label><button>Enregistrer les modifications</button></form></div><div class="panel" id="security"><header><h2>Sécurité</h2><span>Votre session est liée à votre IP et votre e-mail.</span></header><a class="line" href="/v1/user/me/changepassword">Changer mon mot de passe <b>→</b></a></div></section></main>
+@else
+<main class="locked"><section><p class="cap"><i></i> Compte Noliae</p><h1>Votre compte est<br><em>protégé.</em></h1><p>Connectez-vous pour accéder à vos informations personnelles et à vos préférences.</p><a class="button" href="https://login.noliae.com">Se connecter <b>→</b></a><small>La validation réelle de session est effectuée par NolCore avant tout accès API.</small></section></main>
+@endif
+<footer>© Noliae · Vos données, vos règles</footer></body></html>
