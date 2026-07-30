@@ -26,6 +26,10 @@ La page peut lister les appareils avec `GET /v1/user/me/sessions`, révoquer un
 appareil précis ou toutes les sessions. Les empreintes de tokens ne sont jamais
 retournées au navigateur.
 
+Les liens vers Search, IA et Login sont dérivés du hostname de l’environnement.
+Ils restent donc sur `*.beta.noliae.com` en préproduction et ne redirigent pas
+vers un chemin local ou un domaine de production.
+
 ## Développement et livraison
 
 ```sh
